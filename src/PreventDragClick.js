@@ -1,6 +1,7 @@
 export class PreventDragClick {
 	constructor(elem) {
-		this.mouseMoved; // 마우스를 드래그 했는지 true/false
+		this.mouseMoved; 
+		
 		let clickStartX;
 		let clickStartY;
 		let clickStartTime;
