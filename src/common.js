@@ -8,20 +8,34 @@ import {
 
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
+import {
+    World, 
+    Material
+} from 'cannon-es';
+
 export const cm1 = {
-    canvas: document.querySelector('#three-canvas'),
     scene: new Scene(),
     gltfLoader: new GLTFLoader(),
     mixer: undefined,
+
+    // cannon
+    world: new World(),
+    defaultMaterial: new Material('default'),
+    glassMaterial: new Material('glass'),
+    playerMaterial: new Material('player'),
+
 };
 
 export const cm2 = {
+    step: 0,
     backgroundColor: '#3e1322',
     lightColor: '#ffe9ac',
+    lightOffColor: '#222',
     pillarColor: '#071d28',
     floorColor: '#111',
     barColor: '#441c1d',
     glassColor: '#9fdfff',
+
 }
 
 export const geo = {
@@ -38,5 +52,16 @@ export const mat = {
     bar: new MeshPhongMaterial({ color: cm2.barColor }),
     sideLight: new MeshPhongMaterial({ color: cm2.lightColor }),
     glass1: new MeshPhongMaterial({ color: cm2.glassColor, transparent: true, opacity: 0.1 }),
-    glass2: new MeshPhongMaterial({ color: cm2.glassColor, transparent: true, opacity: 0.3 }),
+    glass2: new MeshPhongMaterial({ color: cm2.glassColor, transparent: true, opacity: 0.1 }),
 }
+
+const normalSound = new Audio();
+normalSound.src = '/sounds/Crash.mp3';
+
+const strongSound = new Audio();
+strongSound.src = '/sounds/Wood Hit Metal Crash.mp3';
+
+export const sounds = {
+    normal: normalSound,
+    strong: strongSound
+};
