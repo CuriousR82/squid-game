@@ -4,6 +4,10 @@ npm i -D @babel/cli @babel/core @babel/preset-env babel-loader clean-webpack-plu
 ----------
 npm i three
 ----------
+npm i cannon-es
+----------
+npm i gsap
+----------
 
 2. start server
 ----------
