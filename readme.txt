@@ -14,8 +14,4 @@ npm i gsap
 npm start
 ----------
 
-3. build
-----------
-npm run build
-----------
-
+3. The game will be hosted on http://localhost:8080/ 
